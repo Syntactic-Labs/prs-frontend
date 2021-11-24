@@ -1,0 +1,34 @@
+<app-menu></app-menu>
+<span>Vendor List</span> | 
+<a routerLink="create">Create</a> | 
+<label>Search: </label>
+<input type="text">
+<table class="table table-sm table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip</th>
+            <th>Phone</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let vendor of vendors">
+            <td>{{vendor.id}}</td>
+            <td>{{vendor.code}}</td>
+            <td>{{vendor.name}}</td>
+            <td>{{vendor.address}}</td>
+            <td>{{vendor.city}}</td>
+            <td>{{vendor.state}}</td>
+            <td>{{vendor.zip}}</td>
+            <td>{{vendor.phone}}</td>
+            <td>{{vendor.email}}</td>
+            <td><a routerLink="/vendors/detail/{{vendor.id}}">Detail</a> | <a routerLink="/vendors/edit/{{vendor.id}}">Edit</a></td>
+        </tr>
+    </tbody>
+</table>

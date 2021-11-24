@@ -1,0 +1,28 @@
+<app-menu></app-menu>
+<span>Product List</span> | 
+<a routerLink="create">Create</a>
+<div>
+    <label>Search: </label>
+    <input type="text">
+</div>
+<table class="table table-sm table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>PartNbr</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Unit</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of products">
+            <td>{{product.id}}</td>
+            <td>{{product.partNbr}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.unit}}</td>
+            <td><a routerLink="/products/detail/{{product.id}}">Detail</a> | <a routerLink="/products/edit/{{product.id}}">Edit</a></td>
+        </tr>
+    </tbody>
+</table>

@@ -4,16 +4,18 @@ import { Observable } from 'rxjs';
 import { User } from './user.class';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserService {
+  baseurl: string = 'http://localhost:60186/api/users';
 
-  baseurl: string="http://localhost:60186/api/users";
-
-  constructor(
-    private httpsvc: HttpClient
-  ) { }
+  constructor(private httpsvc: HttpClient) {}
   list(): Observable<User[]> {
-    return this.httpsvc.get(`${this.baseurl}`) as Observable<User[]>
+    return this.httpsvc.get(`${this.baseurl}`) as Observable<User[]>;
   }
+  getOne(id:number): Observable<User> {
+    return this.httpsvc.get(`${this.baseurl}/${id}`) as Observable<User>;
+  }
+
+  
 }

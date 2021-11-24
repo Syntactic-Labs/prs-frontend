@@ -16,6 +16,16 @@ import { HomeComponent } from './homehelpabout/home/home.component';
 import { HelpComponent } from './homehelpabout/help/help.component';
 import { AboutComponent } from './homehelpabout/about/about.component';
 import { E404Component } from './homehelpabout/e404/e404.component';
+import { VendorListComponent } from './vendor/vendor-list/vendor-list.component';
+import { VendorDetailComponent } from './vendor/vendor-detail/vendor-detail.component';
+import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component';
+import { VendorCreateComponent } from './vendor/vendor-create/vendor-create.component';
+import { ProductCreateComponent } from './product/product-create/product-create.component';
+import { ProductDetailComponent } from './product/product-detail/product-detail.component';
+import { ProductEditComponent } from './product/product-edit/product-edit.component';
+import { ProductListComponent } from './product/product-list/product-list.component';
+import { SortPipe } from './sort.pipe';
+import { SearchPipe } from './search.pipe';
 
 @NgModule({
   declarations: [
@@ -30,7 +40,17 @@ import { E404Component } from './homehelpabout/e404/e404.component';
     HomeComponent,
     HelpComponent,
     AboutComponent,
-    E404Component
+    E404Component,
+    VendorListComponent,
+    VendorDetailComponent,
+    VendorEditComponent,
+    VendorCreateComponent,
+    ProductCreateComponent,
+    ProductDetailComponent,
+    ProductEditComponent,
+    ProductListComponent,
+    SortPipe,
+    SearchPipe
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule,

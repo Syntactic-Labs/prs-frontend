@@ -4,24 +4,42 @@ import { AboutComponent } from './homehelpabout/about/about.component';
 import { E404Component } from './homehelpabout/e404/e404.component';
 import { HelpComponent } from './homehelpabout/help/help.component';
 import { HomeComponent } from './homehelpabout/home/home.component';
+import { ProductCreateComponent } from './product/product-create/product-create.component';
+import { ProductDetailComponent } from './product/product-detail/product-detail.component';
+import { ProductEditComponent } from './product/product-edit/product-edit.component';
+import { ProductListComponent } from './product/product-list/product-list.component';
 import { UserCreateComponent } from './user/user-create/user-create.component';
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { UserListComponent } from './user/user-list/user-list.component';
 import { UserLoginComponent } from './user/user-login/user-login.component';
+import { VendorCreateComponent } from './vendor/vendor-create/vendor-create.component';
+import { VendorDetailComponent } from './vendor/vendor-detail/vendor-detail.component';
+import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component';
+import { VendorListComponent } from './vendor/vendor-list/vendor-list.component';
 
 const routes: Routes = [
-  {path: "", redirectTo: "/users/list", pathMatch: "full"},
+  {path: "", redirectTo: "/home", pathMatch: "full"},
 
   {path: "about", component: AboutComponent},
   {path: "help", component: HelpComponent},
   {path: "home", component: HomeComponent},
 
-  {path: "user/create", component: UserCreateComponent},
-  {path: "user/detail:id", component: UserDetailComponent},
-  {path: "user/edit:id", component: UserEditComponent},
-  {path: "users/list", component: UserListComponent},
-  {path: "user/login", component: UserLoginComponent},
+  {path: "users/create", component: UserCreateComponent},
+  {path: "users/detail/:id", component: UserDetailComponent},
+  {path: "users/edit/:id", component: UserEditComponent},
+  {path: "users", component: UserListComponent},
+  {path: "users/login", component: UserLoginComponent},
+
+  {path: "vendors/create", component: VendorCreateComponent},
+  {path: "vendors/detail/:id", component: VendorDetailComponent},
+  {path: "vendors/edit/:id", component: VendorEditComponent},
+  {path: "vendors", component: VendorListComponent},
+
+  {path: "products/create", component: ProductCreateComponent},
+  {path: "products/detail/:id", component: ProductDetailComponent},
+  {path: "products/edit/:id", component: ProductEditComponent},
+  {path: "products", component: ProductListComponent},
   
   {path: "**", component: E404Component}
   
