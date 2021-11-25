@@ -1,5 +1,15 @@
-<nav>
-  <ul>
-    <app-menuitem [menu]="m" *ngFor="let m of menus"></app-menuitem>
-  </ul>
+<nav class="navbar navbar-expand-lg bg-dark navbar-dar">
+  <div class="container-fluid">
+    <button class="navbar-toggler"
+    type="button"
+    data-bs-toggle="collapse"
+    data-bs-target="#navmenu">
+      <span>Menu</span>
+    </button>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav">
+        <app-menuitem [menu]="m" *ngFor="let m of menus"></app-menuitem>
+      </ul>
+    </div>
+  </div>
 </nav>
