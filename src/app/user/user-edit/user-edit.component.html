@@ -1,2 +1,38 @@
 <app-menu></app-menu>
-<p>user-edit works!</p>
+<p>User Edit</p>
+<div>
+  <label>Id: </label>
+  <input [(ngModel)]="user.id" type="text">
+</div>
+<div>
+  <label>Username: </label>
+  <input [(ngModel)]="user.username" type="text">
+</div>
+<div>
+  <label>Password: </label>
+  <input type="text" value="Top Secret!!">
+</div>
+<div>
+  <label>First Name: </label>
+  <input [(ngModel)]="user.firstname" type="text">
+</div>
+<div>
+  <label>Last Name:</label>
+    <input [(ngModel)]="user.lastname" type="text">
+</div>
+<div>
+  <label>Phone: </label>
+  <input [(ngModel)]="user.phone" type="text">
+</div>
+<div>
+  <label>Email: </label>
+  <input [(ngModel)]="user.email" type="text">
+</div>
+<div>
+  <label>Admin: </label>
+  <input type="checkbox">
+</div>
+<div>
+  <label>Reviewer: </label>
+  <input type="checkbox">
+</div>

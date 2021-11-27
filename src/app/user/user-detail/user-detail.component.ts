@@ -11,7 +11,8 @@ import { UserService } from '../user.service';
 export class UserDetailComponent implements OnInit {
   id: any;
   user!: User;
-
+  
+  
   constructor(private route: ActivatedRoute, private usersvc: UserService) {}
 
   ngOnInit(): void {
