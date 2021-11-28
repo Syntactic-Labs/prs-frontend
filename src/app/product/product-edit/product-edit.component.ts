@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Product } from '../product.class';
 import { ProductService } from '../product.service';
 
@@ -8,11 +9,22 @@ import { ProductService } from '../product.service';
   styleUrls: ['./product-edit.component.css']
 })
 export class ProductEditComponent implements OnInit {
-  product: Product[] = []
+  id: any;
+  product!: Product;
 
-  constructor(private productsvc: ProductService) { }
+  constructor(private route: ActivatedRoute, private productsvc: ProductService) { }
 
   ngOnInit(): void {
+    this.id = this.route.snapshot.params['id'];
+    this.productsvc.getOne(this.id).subscribe({
+      next: (res) => {
+        console.log(res);
+        this.product = res;
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    });
   }
 
 }

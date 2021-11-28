@@ -12,7 +12,7 @@ export class UserDetailComponent implements OnInit {
   id: any;
   user!: User;
   
-  
+
   constructor(private route: ActivatedRoute, private usersvc: UserService) {}
 
   ngOnInit(): void {
@@ -21,6 +21,7 @@ export class UserDetailComponent implements OnInit {
       next: (res) => {
         console.log(res);
         this.user = res;
+        
       },
       error: (err) => {
         console.error(err);

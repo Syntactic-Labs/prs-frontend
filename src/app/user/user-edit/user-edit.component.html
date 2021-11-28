@@ -10,7 +10,7 @@
 </div>
 <div>
   <label>Password: </label>
-  <input type="text" value="Top Secret!!">
+  <input [(ngModel)]="user.password" type="password">
 </div>
 <div>
   <label>First Name: </label>
@@ -30,9 +30,9 @@
 </div>
 <div>
   <label>Admin: </label>
-  <input type="checkbox">
+  <input type="checkbox" [checked]="user.isAdmin">
 </div>
 <div>
   <label>Reviewer: </label>
-  <input type="checkbox">
+  <input type="checkbox" [checked]="user.isReviewer">
 </div>

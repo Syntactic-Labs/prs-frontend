@@ -13,5 +13,7 @@ export class ProductService {
   list(): Observable<Product[]> {
     return this.httpsvc.get(`${this.baseurl}`) as Observable<Product[]>;
   }
-  
+  getOne(id:number): Observable<Product> {
+    return this.httpsvc.get(`${this.baseurl}/${id}`) as Observable<Product>;
+  }
 }

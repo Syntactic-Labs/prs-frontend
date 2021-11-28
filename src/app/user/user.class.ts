@@ -1,6 +1,7 @@
 export class User {
     id: number = 0;
     username: string = "";
+    password: string = "";
     firstname: string = "";
     lastname: string = "";
     phone: string = "";
@@ -9,9 +10,10 @@ export class User {
     isAdmin: boolean = false;
 
 
-    constructor(id: number, username: string, firstname: string, lastname: string, phone: string, email: string, isreviewer: boolean, isadmin: boolean) {
+    constructor(id: number, username: string, password: string, firstname: string, lastname: string, phone: string, email: string, isreviewer: boolean, isadmin: boolean) {
         this.id=id;
         this.username=username;
+        this.password=password;
         this.firstname=firstname;
         this.lastname=lastname;
         this.phone=phone;

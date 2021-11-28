@@ -11,7 +11,7 @@ import { VendorService } from '../vendor.service';
 })
 export class VendorDetailComponent implements OnInit {
   id: any;
-  vendor!: Vendor
+  vendor!: Vendor;
 
   constructor(private route: ActivatedRoute, private vendorsvc: VendorService) { }
 

@@ -1,3 +1,7 @@
 input {
     border-radius: 5px;
+    
+}
+input:hover{
+    box-shadow: 5px 10px 10px #888888;
 }
