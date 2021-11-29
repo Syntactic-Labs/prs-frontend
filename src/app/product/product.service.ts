@@ -4,17 +4,22 @@ import { Observable } from 'rxjs';
 import { Product } from './product.class';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProductService {
   baseurl: string = 'http://localhost:60186/api/products';
 
-  constructor(private httpsvc: HttpClient) { }
+  constructor(private httpsvc: HttpClient) {}
   list(): Observable<Product[]> {
     return this.httpsvc.get(`${this.baseurl}`) as Observable<Product[]>;
   }
-  getOne(id:number): Observable<Product> {
+  getOne(id: number): Observable<Product> {
     return this.httpsvc.get(`${this.baseurl}/${id}`) as Observable<Product>;
   }
-  
+  edit(product: Product): Observable<Product> {
+    return this.httpsvc.put(
+      `${this.baseurl}/${product.id}`,
+      product
+    ) as Observable<Product>;
+  }
 }

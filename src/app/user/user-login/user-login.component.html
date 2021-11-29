@@ -1,10 +1,14 @@
 <div class="startpage">
   <h1>Max Design</h1>
-  <img src="\assets\img\start.svg" alt="Techy look tablet and phone!" class="startimg" />
-  <br>
+  <img
+    src="\assets\img\start.svg"
+    alt="Techy look tablet and phone!"
+    class="startimg"
+  />
+  <br />
   <button
     onclick="document.getElementById('loginid').style.display='block'"
-    style="margin-top: 10px;"
+    style="margin-top: 10px"
     class="btn btn-lg btn-success"
   >
     Login
@@ -46,7 +50,13 @@
         required
       />
       <p>Username and Password are case sensitive.</p>
-      <button routerLink="home" class="container btn btn-success" type="submit">Enter</button>
+      <button
+        routerLink="/users/list"
+        class="container btn btn-success"
+        type="submit"
+      >
+        Enter
+      </button>
     </div>
   </form>
 </div>

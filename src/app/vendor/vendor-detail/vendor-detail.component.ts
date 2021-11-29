@@ -3,17 +3,19 @@ import { ActivatedRoute } from '@angular/router';
 import { Vendor } from '../vender.class';
 import { VendorService } from '../vendor.service';
 
-
 @Component({
   selector: 'app-vendor-detail',
   templateUrl: './vendor-detail.component.html',
-  styleUrls: ['./vendor-detail.component.css']
+  styleUrls: ['./vendor-detail.component.css'],
 })
 export class VendorDetailComponent implements OnInit {
   id: any;
   vendor!: Vendor;
 
-  constructor(private route: ActivatedRoute, private vendorsvc: VendorService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private vendorsvc: VendorService
+  ) {}
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
@@ -24,9 +26,7 @@ export class VendorDetailComponent implements OnInit {
       },
       error: (err) => {
         console.error(err);
-      }
-
+      },
     });
   }
-
 }

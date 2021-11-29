@@ -3,24 +3,19 @@ import { ActivatedRoute } from '@angular/router';
 import { User } from '../user.class';
 import { UserService } from '../user.service';
 
-
 @Component({
   selector: 'app-user-login',
   templateUrl: './user-login.component.html',
-  styleUrls: ['./user-login.component.css']
+  styleUrls: ['./user-login.component.css'],
 })
 export class UserLoginComponent implements OnInit {
   user!: User;
   username: any;
   password: any;
-  
-  
 
-  constructor(private route: ActivatedRoute, private usersvc: UserService) { }
+  constructor(private route: ActivatedRoute, private usersvc: UserService) {}
 
   ngOnInit(): void {
-    this.username=this.route.snapshot.params['username']
-    
+    this.username = this.route.snapshot.params['username'];
   }
-
 }

@@ -1,1 +1,35 @@
-<p>request-detail works!</p>
+<app-menu></app-menu>
+<p>Request Detail</p>
+<div *ngIf="request">
+  <table name="req" class="table table-sm table-striped table-hover">
+    <thead>
+      <tr>
+        <label>Request</label>
+      </tr>
+      <tr>
+        <th>Id</th>
+        <th>Description</th>
+        <th>Justification</th>
+        <th>Rejection Reason</th>
+        <th>Delivery Mode</th>
+        <th>Status</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ request.id }}</td>
+        <td>{{ request.description }}</td>
+        <td>{{ request.justification }}</td>
+        <td>{{ request.rejectionReason }}</td>
+        <td>{{ request.deliveryMode }}</td>
+        <td>{{ request.status }}</td>
+        <td>{{ request.total | currency }}</td>
+        <td>
+          <a routerLink="/requests/detail/{{ request.id }}">Detail</a> |
+          <a routerLink="/requests/edit/{{ request.id }}">Edit</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

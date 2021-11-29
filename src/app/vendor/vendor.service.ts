@@ -13,7 +13,13 @@ export class VendorService {
   list(): Observable<Vendor[]> {
     return this.httpsvc.get(`${this.baseurl}`) as Observable<Vendor[]>;
   }
-  getOne(id:number): Observable<Vendor> {
+  getOne(id: number): Observable<Vendor> {
     return this.httpsvc.get(`${this.baseurl}/${id}`) as Observable<Vendor>;
+  }
+  edit(vendor: Vendor): Observable<Vendor> {
+    return this.httpsvc.put(
+      `${this.baseurl}/${vendor.id}`,
+      vendor
+    ) as Observable<Vendor>;
   }
 }

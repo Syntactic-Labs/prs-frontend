@@ -1,18 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Vendor } from '../vender.class';
 import { VendorService } from '../vendor.service';
 
 @Component({
   selector: 'app-vendor-edit',
   templateUrl: './vendor-edit.component.html',
-  styleUrls: ['./vendor-edit.component.css']
+  styleUrls: ['./vendor-edit.component.css'],
 })
 export class VendorEditComponent implements OnInit {
   id: any;
   vendor!: Vendor;
 
-  constructor(private route: ActivatedRoute, private vendorsvc: VendorService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private vendorsvc: VendorService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
@@ -23,8 +27,14 @@ export class VendorEditComponent implements OnInit {
       },
       error: (err) => {
         console.error(err);
-      }
+      },
     });
   }
-
+  save(): void {
+    this.vendorsvc.edit(this.vendor).subscribe({
+      next: (res) => {
+        this.router.navigateByUrl('/vendors/list');
+      },
+    });
+  }
 }

@@ -23,32 +23,32 @@ import { VendorEditComponent } from './vendor/vendor-edit/vendor-edit.component'
 import { VendorListComponent } from './vendor/vendor-list/vendor-list.component';
 
 const routes: Routes = [
-  {path: "", redirectTo: "/home", pathMatch: "full"},
+  {path: "", redirectTo: "/users/login", pathMatch: "full"},
 
   {path: "about", component: AboutComponent},
   {path: "help", component: HelpComponent},
-  {path: "users/login/home", component: HomeComponent},
+  {path: "home", component: HomeComponent},
 
   {path: "users/create", component: UserCreateComponent},
   {path: "users/detail/:id", component: UserDetailComponent},
   {path: "users/edit/:id", component: UserEditComponent},
-  {path: "users", component: UserListComponent},
+  {path: "users/list", component: UserListComponent},
   {path: "users/login", component: UserLoginComponent},
 
   {path: "vendors/create", component: VendorCreateComponent},
   {path: "vendors/detail/:id", component: VendorDetailComponent},
   {path: "vendors/edit/:id", component: VendorEditComponent},
-  {path: "vendors", component: VendorListComponent},
+  {path: "vendors/list", component: VendorListComponent},
 
   {path: "products/create", component: ProductCreateComponent},
   {path: "products/detail/:id", component: ProductDetailComponent},
   {path: "products/edit/:id", component: ProductEditComponent},
-  {path: "products", component: ProductListComponent},
+  {path: "products/list", component: ProductListComponent},
 
   {path: "requests/create", component: RequestCreateComponent},
   {path: "requests/detail/:id", component: RequestDetailComponent},
   {path: "requests/edit/:id", component: RequestEditComponent},
-  {path: "requests", component: RequestListComponent},
+  {path: "requests/list", component: RequestListComponent},
 
   
   {path: "**", component: E404Component}

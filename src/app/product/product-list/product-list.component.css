@@ -5,12 +5,9 @@ table {
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
-  
 }
-td, th {
+td,
+th {
   border: 1px solid black;
   text-align: center;
-}
-input {
-  border-radius: 5px;
 }

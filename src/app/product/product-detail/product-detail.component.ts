@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { Product } from '../product.class';
 import { ProductService } from '../product.service';
 
-
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.component.html',
@@ -12,8 +11,6 @@ import { ProductService } from '../product.service';
 export class ProductDetailComponent implements OnInit {
   id: any;
   product!: Product;
-
-  
 
   constructor(
     private route: ActivatedRoute,
