@@ -1,1 +1,56 @@
-<p>user-login works!</p>
+<div class="startpage">
+  <h1>Max Design</h1>
+  <img src="\assets\img\start.svg" alt="Techy look tablet and phone!" class="startimg" />
+  <br>
+  <button
+    onclick="document.getElementById('loginid').style.display='block'"
+    style="margin-top: 10px;"
+    class="btn btn-lg btn-success"
+  >
+    Login
+  </button>
+</div>
+
+<div id="loginid" class="modal">
+  <form class="modal-content animate">
+    <div class="imgcontainer">
+      <span
+        onclick="document.getElementById('loginid').style.display='none'"
+        class="close"
+        title="Exit"
+        >&times;</span
+      >
+      <img
+        src="\assets\img\login.svg"
+        alt="Buisness woman at computer"
+        class="logimg"
+      />
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Enter Username"
+        name="uname"
+        required
+      />
+
+      <label for="psw"><b>Password</b></label>
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Enter Password"
+        name="psw"
+        required
+      />
+      <p>Username and Password are case sensitive.</p>
+      <button routerLink="home" class="container btn btn-success" type="submit">Enter</button>
+    </div>
+  </form>
+</div>
+
+<script>
+  var modal = document.getElementById("loginid");
+</script>

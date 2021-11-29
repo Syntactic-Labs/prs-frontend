@@ -1,3 +1,27 @@
 <app-menu></app-menu>
-<p>Product Detail</p>
+<p>Product Edit</p>
+<div *ngIf="product">
+  <div>
+    <label>Id: </label>
+    <input [(ngModel)]="product.id" type="text" />
+  </div>
+  <div>
+    <label>PartNbr: </label>
+    <input [(ngModel)]="product.partNbr" type="text" />
+  </div>
+  <div>
+    <label>Name: </label>
+    <input [(ngModel)]="product.name" type="text" />
+  </div>
+  <div>
+    <label>Price: </label>
+    <input [(ngModel)]="product.price" type="text" />
+  </div>
+  <div>
+    <label>Unit:</label>
+    <input [(ngModel)]="product.unit" type="text" />
+  </div>
+</div>
 
+<button class="btn btn-danger" type="submit">delete</button>
+<button class="btn btn-success">Update</button>

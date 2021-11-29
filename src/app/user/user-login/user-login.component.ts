@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { User } from '../user.class';
+import { UserService } from '../user.service';
+
 
 @Component({
   selector: 'app-user-login',
@@ -6,10 +10,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-login.component.css']
 })
 export class UserLoginComponent implements OnInit {
+  user!: User;
+  username: any;
+  password: any;
+  
+  
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private usersvc: UserService) { }
 
   ngOnInit(): void {
+    this.username=this.route.snapshot.params['username']
+    
   }
 
 }

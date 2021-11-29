@@ -1,38 +1,40 @@
 <app-menu></app-menu>
 <p>User Detail</p>
-<div>
-  <label>Id: </label>
-  <input value="{{user.id}}" type="text" disabled>
-</div>
-<div>
-  <label>Username: </label>
-  <input value="{{user.username}}" type="text" disabled>
-</div>
-<div>
-  <label>Password: </label>
-  <input type="text" value="Top Secret!!" disabled>
-</div>
-<div>
-  <label>First Name: </label>
-  <input value="{{user.firstname}}" type="text" disabled>
-</div>
-<div>
-  <label>Last Name:</label>
-    <input value="{{user.lastname}}" type="text" disabled>
-</div>
-<div>
-  <label>Phone: </label>
-  <input value="{{user.phone}}" type="text" disabled>
-</div>
-<div>
-  <label>Email: </label>
-  <input value="{{user.email}}" type="text" disabled>
-</div>
-<div>
-  <label>Admin: </label>
-  <input type="checkbox" [checked]="user.isAdmin" disabled>
-</div>
-<div>
-  <label>Reviewer: </label>
-  <input type="checkbox" [checked]="user.isReviewer" disabled>
+<div *ngIf="user">
+  <div>
+    <label>Id: </label>
+    <input value="{{ user.id }}" type="text" disabled />
+  </div>
+  <div>
+    <label>Username: </label>
+    <input value="{{ user.username }}" type="text" disabled />
+  </div>
+  <div>
+    <label>Password: </label>
+    <input type="text" value="Top Secret!!" disabled />
+  </div>
+  <div>
+    <label>First Name: </label>
+    <input value="{{ user.firstname }}" type="text" disabled />
+  </div>
+  <div>
+    <label>Last Name:</label>
+    <input value="{{ user.lastname }}" type="text" disabled />
+  </div>
+  <div>
+    <label>Phone: </label>
+    <input value="{{ user.phone }}" type="text" disabled />
+  </div>
+  <div>
+    <label>Email: </label>
+    <input value="{{ user.email }}" type="text" disabled />
+  </div>
+  <div>
+    <label>Admin: </label>
+    <input type="checkbox" [checked]="user.isAdmin" disabled />
+  </div>
+  <div>
+    <label>Reviewer: </label>
+    <input type="checkbox" [checked]="user.isReviewer" disabled />
+  </div>
 </div>
