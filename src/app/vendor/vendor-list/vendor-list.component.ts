@@ -8,6 +8,7 @@ import { VendorService } from '../vendor.service';
   styleUrls: ['./vendor-list.component.css'],
 })
 export class VendorListComponent implements OnInit {
+  searchCrit: string="";
   vendors: Vendor[] = [];
 
   constructor(private vendorsvc: VendorService) {}

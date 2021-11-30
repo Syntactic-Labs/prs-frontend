@@ -1,9 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'sort'
+  name: 'productSearch'
 })
-export class SortPipe implements PipeTransform {
+export class ProductSearchPipe implements PipeTransform {
 
   transform(value: unknown, ...args: unknown[]): unknown {
     return null;

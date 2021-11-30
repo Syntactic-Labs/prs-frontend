@@ -22,9 +22,9 @@ export class UserService {
       user
     ) as Observable<User>;
   }
-  /*addUser(user: User): Observable<User> {
-    return this.httpsvc.post(this.baseurl) as Observable<User>;
-  }*/
+  create(user: User): Observable<User> {
+    return this.httpsvc.post(`${this.baseurl}`, user) as Observable<User>;
+  }
   delete(id: number): Observable<User> {
     return this.httpsvc.delete(`${this.baseurl}/${id}`) as Observable<User>;
   }

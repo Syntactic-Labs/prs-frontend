@@ -2,7 +2,7 @@
 <a routerLink="/users/create">Create</a>
 <div>
   <label>Search: </label>
-  <input [(ngModel)]="searchCrit" type="text" />
+  <input [(ngModel)]="searchCrit" placeholder="Enter User Info" type="text" />
 </div>
 <table class="table table-sm table-striped table-hover">
   <thead>
@@ -24,8 +24,8 @@
       <td>{{ user.firstname }} {{ user.lastname }}</td>
       <td>{{ user.phone }}</td>
       <td>{{ user.email }}</td>
-      <td>{{ user.isAdmin }}</td>
-      <td>{{ user.isReviewer }}</td>
+      <td>{{ user.isAdmin | yesNo }}</td>
+      <td>{{ user.isReviewer | yesNo }}</td>
       <td>
         <a routerLink="/users/detail/{{ user.id }}">Detail</a> |
         <a routerLink="/users/edit/{{ user.id }}">Edit</a>

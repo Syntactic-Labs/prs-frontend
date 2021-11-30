@@ -2,7 +2,7 @@
 <a routerLink="/vendors/create">Create</a>
 <div>
   <label>Search: </label>
-  <input type="text" />
+  <input [(ngModel)]="searchCrit" placeholder="Enter Vendor Info" type="text" />
 </div>
 <table class="table table-sm table-striped table-hover">
   <thead>
@@ -20,7 +20,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let vendor of vendors">
+    <tr *ngFor="let vendor of vendors | vendorSearch:searchCrit">
       <td>{{ vendor.id }}</td>
       <td>{{ vendor.code }}</td>
       <td>{{ vendor.name }}</td>

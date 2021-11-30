@@ -24,12 +24,17 @@ import { ProductCreateComponent } from './product/product-create/product-create.
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 import { ProductEditComponent } from './product/product-edit/product-edit.component';
 import { ProductListComponent } from './product/product-list/product-list.component';
-import { SortPipe } from './sort.pipe';
-import { SearchPipe } from './search.pipe';
 import { RequestCreateComponent } from './request/request-create/request-create.component';
 import { RequestDetailComponent } from './request/request-detail/request-detail.component';
 import { RequestEditComponent } from './request/request-edit/request-edit.component';
 import { RequestListComponent } from './request/request-list/request-list.component';
+import { SearchPipe } from './apputilities/search.pipe';
+import { VendorSearchPipe } from './vendor/vendor-search.pipe';
+import { UserSearchPipe } from './user/user-search.pipe';
+import { ProductSearchPipe } from './product/product-search.pipe';
+import { RequestSearchPipe } from './request/request-search.pipe';
+import { BooleanPipe } from './apputilities/boolean.pipe';
+
 
 @NgModule({
   declarations: [
@@ -53,12 +58,16 @@ import { RequestListComponent } from './request/request-list/request-list.compon
     ProductDetailComponent,
     ProductEditComponent,
     ProductListComponent,
-    SortPipe,
-    SearchPipe,
     RequestCreateComponent,
     RequestDetailComponent,
     RequestEditComponent,
-    RequestListComponent
+    RequestListComponent,
+    SearchPipe,
+    VendorSearchPipe,
+    UserSearchPipe,
+    ProductSearchPipe,
+    RequestSearchPipe,
+    BooleanPipe
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule,

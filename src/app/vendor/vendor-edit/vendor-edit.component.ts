@@ -37,4 +37,11 @@ export class VendorEditComponent implements OnInit {
       },
     });
   }
+  remove(): void {
+    this.vendorsvc.delete(this.id).subscribe({
+      next: (res) => {
+        this.router.navigateByUrl('/vendors/list');
+      },
+    });
+  }
 }

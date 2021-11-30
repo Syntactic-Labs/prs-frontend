@@ -22,4 +22,10 @@ export class VendorService {
       vendor
     ) as Observable<Vendor>;
   }
+  create(vendor: Vendor): Observable<Vendor> {
+    return this.httpsvc.post(`${this.baseurl}`, vendor) as Observable<Vendor>;
+  }
+  delete(id: number): Observable<Vendor> {
+    return this.httpsvc.delete(`${this.baseurl}/${id}`) as Observable<Vendor>;
+  }
 }

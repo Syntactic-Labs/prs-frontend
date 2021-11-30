@@ -37,4 +37,11 @@ export class UserEditComponent implements OnInit {
       },
     });
   }
+  remove(): void {
+    this.usersvc.delete(this.id).subscribe({
+      next: (res) => {
+        this.router.navigateByUrl('/users/list');
+      }
+    })
+  }
 }
