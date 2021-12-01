@@ -13,7 +13,6 @@ import { UserCreateComponent } from './user/user-create/user-create.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
 import { UserLoginComponent } from './user/user-login/user-login.component';
 import { HomeComponent } from './homehelpabout/home/home.component';
-import { HelpComponent } from './homehelpabout/help/help.component';
 import { AboutComponent } from './homehelpabout/about/about.component';
 import { E404Component } from './homehelpabout/e404/e404.component';
 import { VendorListComponent } from './vendor/vendor-list/vendor-list.component';
@@ -34,6 +33,8 @@ import { UserSearchPipe } from './user/user-search.pipe';
 import { ProductSearchPipe } from './product/product-search.pipe';
 import { RequestSearchPipe } from './request/request-search.pipe';
 import { BooleanPipe } from './apputilities/boolean.pipe';
+import { RequestlineCreateComponent } from './requestline/requestline-create/requestline-create.component';
+import { RequestlineEditComponent } from './requestline/requestline-edit/requestline-edit.component';
 
 
 @NgModule({
@@ -47,7 +48,6 @@ import { BooleanPipe } from './apputilities/boolean.pipe';
     UserEditComponent,
     UserLoginComponent,
     HomeComponent,
-    HelpComponent,
     AboutComponent,
     E404Component,
     VendorListComponent,
@@ -67,7 +67,9 @@ import { BooleanPipe } from './apputilities/boolean.pipe';
     UserSearchPipe,
     ProductSearchPipe,
     RequestSearchPipe,
-    BooleanPipe
+    BooleanPipe,
+    RequestlineCreateComponent,
+    RequestlineEditComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule,

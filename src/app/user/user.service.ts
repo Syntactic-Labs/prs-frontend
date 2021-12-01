@@ -28,4 +28,7 @@ export class UserService {
   delete(id: number): Observable<User> {
     return this.httpsvc.delete(`${this.baseurl}/${id}`) as Observable<User>;
   }
+  login(username: string, password:string): Observable<User> {
+    return this.httpsvc.get(`${this.baseurl}/${username}/${password}`) as Observable<User>;
+  }
 }

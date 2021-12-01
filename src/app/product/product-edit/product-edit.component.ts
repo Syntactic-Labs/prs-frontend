@@ -37,4 +37,11 @@ export class ProductEditComponent implements OnInit {
       },
     });
   }
+  remove(): void {
+    this.productsvc.delete(this.id).subscribe({
+      next: (res) => {
+        this.router.navigateByUrl('/products/list');
+      },
+    });
+  }
 }

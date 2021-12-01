@@ -18,7 +18,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let user of users">
+    <tr *ngFor="let user of users | userSearch: searchCrit">
       <td>{{ user.id }}</td>
       <td>{{ user.username }}</td>
       <td>{{ user.firstname }} {{ user.lastname }}</td>

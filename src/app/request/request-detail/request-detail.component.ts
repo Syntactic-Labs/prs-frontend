@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { AppService } from 'src/app/apputilities/app.service';
 import { Request } from '../request.class';
 import { RequestService } from '../request.service';
 
@@ -14,7 +15,8 @@ export class RequestDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private requestsvc: RequestService
+    private requestsvc: RequestService,
+    private appsvc: AppService
   ) { }
 
   ngOnInit(): void {

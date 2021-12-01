@@ -17,7 +17,8 @@ export class ProductListComponent implements OnInit {
     this.productsvc.list().subscribe({
       next: (res) => {
         console.debug('Products:', res);
-        this.products = res;
+        this.products = res as Product[];
+        this.products.forEach(p => p.vendorName = p.vendor !== undefined ? p.vendor.name : "missing");
       },
       error: (err) => {
         console.error(err);

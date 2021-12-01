@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './homehelpabout/about/about.component';
 import { E404Component } from './homehelpabout/e404/e404.component';
-import { HelpComponent } from './homehelpabout/help/help.component';
 import { HomeComponent } from './homehelpabout/home/home.component';
 import { ProductCreateComponent } from './product/product-create/product-create.component';
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
@@ -12,6 +11,8 @@ import { RequestCreateComponent } from './request/request-create/request-create.
 import { RequestDetailComponent } from './request/request-detail/request-detail.component';
 import { RequestEditComponent } from './request/request-edit/request-edit.component';
 import { RequestListComponent } from './request/request-list/request-list.component';
+import { RequestlineCreateComponent } from './requestline/requestline-create/requestline-create.component';
+import { RequestlineEditComponent } from './requestline/requestline-edit/requestline-edit.component';
 import { UserCreateComponent } from './user/user-create/user-create.component';
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { UserEditComponent } from './user/user-edit/user-edit.component';
@@ -26,7 +27,6 @@ const routes: Routes = [
   {path: "", redirectTo: "/users/login", pathMatch: "full"},
 
   {path: "about", component: AboutComponent},
-  {path: "help", component: HelpComponent},
   {path: "home", component: HomeComponent},
 
   {path: "users/create", component: UserCreateComponent},
@@ -49,6 +49,9 @@ const routes: Routes = [
   {path: "requests/detail/:id", component: RequestDetailComponent},
   {path: "requests/edit/:id", component: RequestEditComponent},
   {path: "requests/list", component: RequestListComponent},
+
+  {path: "requestlines/create", component: RequestlineCreateComponent},
+  {path: "requestlines/edit/:id", component: RequestlineEditComponent},
 
   
   {path: "**", component: E404Component}

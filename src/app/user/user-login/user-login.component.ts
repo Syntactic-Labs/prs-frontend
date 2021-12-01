@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+import { AppService } from 'src/app/apputilities/app.service';
 import { User } from '../user.class';
 import { UserService } from '../user.service';
 
@@ -9,13 +10,32 @@ import { UserService } from '../user.service';
   styleUrls: ['./user-login.component.css'],
 })
 export class UserLoginComponent implements OnInit {
-  user!: User;
-  username: any;
-  password: any;
+  username: string = '';
+  password: string = '';
+  msg: string = '';
 
-  constructor(private route: ActivatedRoute, private usersvc: UserService) {}
+  constructor(
+    private usersvc: UserService,
+    private router: Router,
+    private appsvc: AppService
+  ) {}
 
-  ngOnInit(): void {
-    this.username = this.route.snapshot.params['username'];
+  login(): void {
+    this.appsvc.clearUserBox();
+    this.usersvc.login(this.username, this.password).subscribe({
+      next: (res) => {
+        this.appsvc.setUser(res as User);
+        this.router.navigateByUrl('/home');
+      },
+      error: (err) => {
+        if (err.error.status == 404) {
+          this.msg = 'Username and or Password not found!';
+          return;
+        }
+        console.debug(err);
+      },
+    });
   }
+
+  ngOnInit(): void {}
 }

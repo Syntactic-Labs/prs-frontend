@@ -16,4 +16,39 @@ export class RequestService {
   getOne(id: number): Observable<Request> {
     return this.httpsvc.get(`${this.baseurl}/${id}`) as Observable<Request>;
   }
+  create(request: Request): Observable<Request> {
+    return this.httpsvc.post(`${this.baseurl}`, request) as Observable<Request>;
+  }
+  edit(request: Request): Observable<Request> {
+    return this.httpsvc.put(
+      `${this.baseurl}/${request.id}`,
+      request
+    ) as Observable<Request>;
+  }
+  delete(id: number): Observable<Request> {
+    return this.httpsvc.delete(`${this.baseurl}/${id}`) as Observable<Request>;
+  }
+  reviews(userId: number): Observable<Request> {
+    return this.httpsvc.get(
+      `${this.baseurl}/reviews/${userId}`
+    ) as Observable<Request>;
+  }
+  review(request: Request): Observable<Request> {
+    return this.httpsvc.put(
+      `${this.baseurl}/review/${request.id}`,
+      request
+    ) as Observable<Request>;
+  }
+  approve(request: Request): Observable<Request> {
+    return this.httpsvc.put(
+      `${this.baseurl}/approve/${request.id}`,
+      request
+    ) as Observable<Request>;
+  }
+  reject(request: Request): Observable<Request> {
+    return this.httpsvc.put(
+      `${this.baseurl}/reject/${request.id}`,
+      request
+    ) as Observable<Request>;
+  }
 }
