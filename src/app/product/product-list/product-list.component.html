@@ -2,7 +2,11 @@
 <a routerLink="/products/create">Create</a>
 <div>
   <label>Search: </label>
-  <input placeholder="Enter Product Info" type="text" />
+  <input
+    [(ngModel)]="searchCrit"
+    placeholder="Enter Product Info"
+    type="text"
+  />
 </div>
 <table class="table table-sm table-striped table-hover">
   <thead>
@@ -12,16 +16,18 @@
       <th>Name</th>
       <th>Price</th>
       <th>Unit</th>
+      <th>Vendor</th>
       <th>Actions</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let product of products">
+    <tr *ngFor="let product of products | productSearch: searchCrit">
       <td>{{ product.id }}</td>
       <td>{{ product.partNbr }}</td>
       <td>{{ product.name }}</td>
-      <td>{{ product.price }}</td>
+      <td>{{ product.price | currency }}</td>
       <td>{{ product.unit }}</td>
+      <td>{{ product.vendorName }}</td>
       <td>
         <a routerLink="/products/detail/{{ product.id }}">Detail</a> |
         <a routerLink="/products/edit/{{ product.id }}">Edit</a>

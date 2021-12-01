@@ -20,7 +20,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let vendor of vendors | vendorSearch:searchCrit">
+    <tr *ngFor="let vendor of vendors | vendorSearch: searchCrit">
       <td>{{ vendor.id }}</td>
       <td>{{ vendor.code }}</td>
       <td>{{ vendor.name }}</td>

@@ -2,23 +2,23 @@
 <p>product-create works!</p>
 <div>
   <label>Id: </label>
-  <input placeholder="Id" type="text" />
+  <input placeholder="0" [(ngModel)]="product.id" type="text" disabled />
 </div>
 <div>
   <label>PartNbr: </label>
-  <input placeholder="Part Number" type="text" />
+  <input placeholder="Part Number" [(ngModel)]="product.partNbr" type="text" />
 </div>
 <div>
   <label>Name: </label>
-  <input placeholder="Name" type="text" />
+  <input placeholder="Name" [(ngModel)]="product.name" type="text" />
 </div>
 <div>
   <label>Price: </label>
-  <input placeholder="Price" type="text" />
+  <input placeholder="Price" [(ngModel)]="product.price" type="text" />
 </div>
 <div>
   <label>Unit:</label>
-  <input placeholder="Unit" type="text" />
+  <input placeholder="Unit" [(ngModel)]="product.unit" type="text" />
 </div>
 <button class="btn btn-warning">Clear</button>
-<button class="btn btn-success">Create</button>
+<button (click)="save()" class="btn btn-success">Create</button>

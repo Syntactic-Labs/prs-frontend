@@ -22,4 +22,10 @@ export class ProductService {
       product
     ) as Observable<Product>;
   }
+  create(product: Product): Observable<Product> {
+    return this.httpsvc.post(`${this.baseurl}`, product) as Observable<Product>;
+  }
+  delete(id: number): Observable<Product> {
+    return this.httpsvc.delete(`${this.baseurl}/${id}`) as Observable<Product>;
+  }
 }
