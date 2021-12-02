@@ -26,6 +26,7 @@
     placeholder="Rejection Reason"
     [(ngModel)]="request.rejectionReason"
     type="text"
+    disabled
   />
 </div>
 <div>
@@ -38,15 +39,24 @@
 </div>
 <div>
   <label>Status:</label>
-  <input placeholder="Status" [(ngModel)]="request.status" type="text" />
+  <input
+    placeholder="Status"
+    [(ngModel)]="request.status"
+    type="text"
+    disabled
+  />
 </div>
 <div>
   <label>Total:</label>
-  <input placeholder="Total" [(ngModel)]="request.total" type="text" />
+  <input placeholder="0" [(ngModel)]="request.total" type="number" disabled />
 </div>
 <div>
-  <label>User Id:</label>
-  <input placeholder="User Id" [(ngModel)]="request.userId" type="text" />
+  <label>User:</label>
+  <input
+    placeholder="User Id"
+    [(ngModel)]="request.userName"
+    type="text"
+    disabled
+  />
 </div>
-<button class="btn btn-warning">Clear</button>
 <button (click)="save()" class="btn btn-success">Create</button>

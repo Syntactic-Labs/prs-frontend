@@ -6,3 +6,9 @@ span:hover {
   background-color: blue;
   border-radius: 6px;
 }
+#currentUser {
+  text-align: right;
+  color: silver;
+  width: 20%;
+  padding-right: 5px;
+}

@@ -20,6 +20,10 @@ export class UserLoginComponent implements OnInit {
     private appsvc: AppService
   ) {}
 
+  get isAdmin() {
+    return this.appsvc.getUser().isAdmin;
+  }
+
   login(): void {
     this.appsvc.clearUserBox();
     this.usersvc.login(this.username, this.password).subscribe({
@@ -37,5 +41,9 @@ export class UserLoginComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.debug("ngOnInit()");
+    this.username = this.password = "a";
+  }
+  
 }

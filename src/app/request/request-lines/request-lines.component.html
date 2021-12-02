@@ -1,0 +1,69 @@
+<app-menu></app-menu>
+<p>Request</p>
+<div *ngIf="request">
+  <table name="req" class="table table-sm table-striped table-hover">
+    <thead>
+      <tr>
+        <label>Request</label>
+      </tr>
+      <tr>
+        <th>Id</th>
+        <th>Description</th>
+        <th>Rejection Reason</th>
+        <th>Status</th>
+        <th>Total</th>
+        <th>User</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ request.id }}</td>
+        <td>{{ request.description }}</td>
+        <td>{{request.rejectionReason}}</td>
+        <td>{{request.status}}</td>
+        <td>{{request.total | currency}}</td>
+        <td>{{request.userName}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Request Lines</p>
+  <div *ngIf="request">
+    <table name="req" class="table table-sm table-striped table-hover">
+      <thead>
+        <tr>
+          <label>Request</label>
+        </tr>
+        <tr>
+          <th>Id</th>
+          <th>Product</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Line Total</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let rl of request.requestlines">
+          <td>{{ rl.id }}</td>
+          <td>{{ rl.product !== undefined ? rl.product.name : "missing" }}</td>
+          <td>{{ rl.quantity }}</td>
+          <td>
+            {{ (rl.product !== undefined ? rl.product.price : -1) | currency }}
+          </td>
+          <td>
+            {{
+              rl.quantity * (rl.product !== undefined ? rl.product.price : -1)
+                | currency
+            }}
+          </td>
+          <td>
+            <button (click)="deleteLine(rl.id)" class="btn btn-link">
+              Delete
+            </button>
+            <button (click)="editLine(rl.id)" class="btn btn-link">Edit</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

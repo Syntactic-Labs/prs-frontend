@@ -32,7 +32,7 @@
     </div>
 
     <div class="container">
-      <label for="uname"><b>Username</b></label>
+      <label for="uname"><b>Username{{msg}}</b></label>
       <input
         [(ngModel)]="username"
         class="form-control"
@@ -51,7 +51,6 @@
         name="psw"
         required
       />
-      <p>{{msg}}</p>
       <button
         (click)="login()"
         class="container btn btn-success"

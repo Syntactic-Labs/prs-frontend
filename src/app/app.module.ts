@@ -35,6 +35,9 @@ import { RequestSearchPipe } from './request/request-search.pipe';
 import { BooleanPipe } from './apputilities/boolean.pipe';
 import { RequestlineCreateComponent } from './requestline/requestline-create/requestline-create.component';
 import { RequestlineEditComponent } from './requestline/requestline-edit/requestline-edit.component';
+import { RequestLinesComponent } from './request/request-lines/request-lines.component';
+import { RequestReviewItemComponent } from './request/request-review-item/request-review-item.component';
+import { RequestReviewListComponent } from './request/request-review-list/request-review-list.component';
 
 
 @NgModule({
@@ -69,7 +72,10 @@ import { RequestlineEditComponent } from './requestline/requestline-edit/request
     RequestSearchPipe,
     BooleanPipe,
     RequestlineCreateComponent,
-    RequestlineEditComponent
+    RequestlineEditComponent,
+    RequestLinesComponent,
+    RequestReviewItemComponent,
+    RequestReviewListComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule,

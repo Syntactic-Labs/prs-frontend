@@ -18,10 +18,6 @@ export class AppService {
     this.loggedUser = user;
   }
   checkLogin() {
-    if(!this.loginCheck) {
-      console.warn("!!!Must log in!!!");
-      return;
-    }
     if (this.getUser() === emptyUserBox) {
       this.router.navigateByUrl('/users/login');
     }

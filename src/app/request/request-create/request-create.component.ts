@@ -11,15 +11,29 @@ import { RequestService } from '../request.service';
 })
 export class RequestCreateComponent implements OnInit {
   request: Request = new Request();
-  constructor(private requestsvc: RequestService, private router: Router, appsvc: AppService) {}
+  constructor(
+    private requestsvc: RequestService,
+    private router: Router,
+    private appsvc: AppService
+  ) {}
 
-  ngOnInit(): void {}
+  get isAdmin() { return this.appsvc.getUser().isAdmin; }
+
   save(): void {
+    console.log(this.request);
     this.requestsvc.create(this.request).subscribe({
       next: (res) => {
-        console.log('Request successfully created!');
-        this.router.navigateByUrl('/requests/list');
+        console.log('Request created successfully!');
+        this.router.navigateByUrl("/requests/list");
+      },
+      error: (err) => {
+        console.error(err);
       },
     });
+  }
+  ngOnInit(): void {
+    this.appsvc.checkLogin();
+    this.request.userId = this.appsvc.getUser().id;
+    this.request.userName = this.appsvc.getUser().username;
   }
 }

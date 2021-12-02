@@ -10,7 +10,10 @@ import { ProductListComponent } from './product/product-list/product-list.compon
 import { RequestCreateComponent } from './request/request-create/request-create.component';
 import { RequestDetailComponent } from './request/request-detail/request-detail.component';
 import { RequestEditComponent } from './request/request-edit/request-edit.component';
+import { RequestLinesComponent } from './request/request-lines/request-lines.component';
 import { RequestListComponent } from './request/request-list/request-list.component';
+import { RequestReviewItemComponent } from './request/request-review-item/request-review-item.component';
+import { RequestReviewListComponent } from './request/request-review-list/request-review-list.component';
 import { RequestlineCreateComponent } from './requestline/requestline-create/requestline-create.component';
 import { RequestlineEditComponent } from './requestline/requestline-edit/requestline-edit.component';
 import { UserCreateComponent } from './user/user-create/user-create.component';
@@ -49,6 +52,9 @@ const routes: Routes = [
   {path: "requests/detail/:id", component: RequestDetailComponent},
   {path: "requests/edit/:id", component: RequestEditComponent},
   {path: "requests/list", component: RequestListComponent},
+  {path: "requests/lines/:id", component: RequestLinesComponent},
+  {path: "requests/reviews", component: RequestReviewListComponent},
+  {path: "requests/review/:id", component: RequestReviewItemComponent},
 
   {path: "requestlines/create", component: RequestlineCreateComponent},
   {path: "requestlines/edit/:id", component: RequestlineEditComponent},

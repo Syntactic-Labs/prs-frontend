@@ -1,2 +1,37 @@
 <app-menu></app-menu>
-<p>request-edit works!</p>
+<p>Request Edit</p>
+<div *ngIf="request">
+  <div>
+    <label>Id: </label>
+    <input [(ngModel)]="request.id" type="text" disabled/>
+  </div>
+  <div>
+    <label>Description: </label>
+    <input [(ngModel)]="request.description" type="text" />
+  </div>
+  <div>
+    <label>Justification: </label>
+    <input [(ngModel)]="request.justification" type="text" />
+  </div>
+  <div>
+    <label>Rejection Reason: </label>
+    <input [(ngModel)]="request.rejectionReason" type="text" disabled/>
+  </div>
+  <div>
+      <label>DeliveryMode:</label>
+      <input [(ngModel)]="request.deliveryMode" type="text" />
+    </div>
+    <div>
+      <label>Status:</label>
+      <input [(ngModel)]="request.status" type="text" disabled/>
+    </div>
+  <div>
+    <label>Total:</label>
+    <input [(ngModel)]="request.total" type="text" disabled/>
+  </div>
+  <div>
+    <label>User:</label>
+    <input [(ngModel)]="request.userName" type="text" disabled/>
+  </div>
+</div>
+<button (click)="save()" class="btn btn-success">Update</button>
