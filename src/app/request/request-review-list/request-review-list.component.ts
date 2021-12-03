@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { AppService } from 'src/app/apputilities/app.service';
 import { RequestService } from '../request.service';
 import { Request } from '../request.class';
@@ -16,7 +16,6 @@ export class RequestReviewListComponent implements OnInit {
 
   constructor(
     private appsvc: AppService,
-    private route: ActivatedRoute,
     private router: Router,
     private requestsvc: RequestService
   ) { }

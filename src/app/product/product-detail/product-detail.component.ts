@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AppService } from 'src/app/apputilities/app.service';
 import { Product } from '../product.class';
 import { ProductService } from '../product.service';
 
@@ -11,21 +12,32 @@ import { ProductService } from '../product.service';
 export class ProductDetailComponent implements OnInit {
   id: any;
   product!: Product;
+  get vendor() {
+    return this.product.vendor !== undefined
+      ? this.product.vendor.name
+      : 'not found';
+  }
 
   constructor(
     private route: ActivatedRoute,
-    private productsvc: ProductService
+    private productsvc: ProductService,
+    private appsvc: AppService,
+    private router: Router
   ) {}
+  get isAdmin() {
+    return this.appsvc.getUser().isAdmin;
+  }
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.params['id'];
-    this.productsvc.getOne(this.id).subscribe({
+    this.appsvc.checkLogin();
+    let id = +this.route.snapshot.params['id'];
+    this.productsvc.getOne(id).subscribe({
       next: (res) => {
-        console.log(res);
-        this.product = res;
+        console.log('Product:', res as Product);
+        this.product = res as Product;
       },
       error: (err) => {
-        console.error(err);
+        console.error('Trap error:', err);
       },
     });
   }

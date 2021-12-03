@@ -18,11 +18,13 @@
 </div>
 <div>
   <label>Unit:</label>
-  <input placeholder="Unit" [(ngModel)]="product.unit" type="text" />
+  <input placeholder="Unit" [(ngModel)]="product.unit" type="text">
 </div>
 <div>
-  <label>Vendor Id:</label>
-  <input placeholder="VendorId" [(ngModel)]="product.vendorId" type="text" />
+  <label>Vendor:</label>
+  <select [(ngModel)]="product.vendorId">
+    <option *ngFor="let v of vendors" [ngValue]="v.id">{{ v.name }}</option>
+  </select>
 </div>
 <button class="btn btn-warning">Clear</button>
 <button (click)="save()" class="btn btn-success">Create</button>

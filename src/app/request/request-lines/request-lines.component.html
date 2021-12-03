@@ -1,10 +1,9 @@
 <app-menu></app-menu>
-<p>Request</p>
 <div>
   <table name="req" class="table table-sm table-striped table-hover">
     <thead>
       <tr>
-        <label>Request</label>
+        <th colspan="7"><h4>Request</h4></th>
       </tr>
       <tr>
         <th>Id</th>
@@ -32,10 +31,16 @@
       </tr>
     </tbody>
   </table>
-  <p>Requst Lines</p>
-  <a routerLink="/requestlines/create/{{ request.id }}">Create</a>
   <table class="table table-sm table-striped table-hover">
     <thead>
+      <tr>
+        <th colspan="6">
+          <h4>
+            Request Lines ------------
+            <a routerLink="/requestlines/create/{{ request.id }}">Create</a>
+          </h4>
+        </th>
+      </tr>
       <tr>
         <th>Id</th>
         <th>Product</th>
@@ -62,10 +67,9 @@
         <td>
           <button (click)="deleteLine(rl.id)" class="btn btn-danger">
             Delete
-          </button> |
-          <button (click)="editLine(rl.id)" class="btn btn-link">
-            Edit
           </button>
+          |
+          <button (click)="editLine(rl.id)" class="btn btn-link">Edit</button>
         </td>
       </tr>
     </tbody>

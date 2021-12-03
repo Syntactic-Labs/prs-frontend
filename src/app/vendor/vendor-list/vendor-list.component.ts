@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from 'src/app/apputilities/app.service';
 import { Vendor } from '../vender.class';
 import { VendorService } from '../vendor.service';
 
@@ -8,16 +9,18 @@ import { VendorService } from '../vendor.service';
   styleUrls: ['./vendor-list.component.css'],
 })
 export class VendorListComponent implements OnInit {
-  searchCrit: string="";
+  searchCrit: string = '';
   vendors: Vendor[] = [];
 
-  constructor(private vendorsvc: VendorService) {}
+  constructor(private vendorsvc: VendorService, private appsvc: AppService) {}
+  get isAdmin() { return this.appsvc.getUser().isAdmin; }
 
   ngOnInit(): void {
+    this.appsvc.checkLogin();
     this.vendorsvc.list().subscribe({
       next: (res) => {
-        console.debug('Users:', res);
-        this.vendors = res;
+        console.debug(res);
+        this.vendors = res as Vendor[];
       },
       error: (err) => {
         console.error(err);

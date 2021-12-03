@@ -21,6 +21,12 @@
     <label>Unit:</label>
     <input [(ngModel)]="product.unit" type="text" />
   </div>
+  <div>
+    <label>Vendor:</label>
+    <select [(ngModel)]="product.vendorId">
+      <option *ngFor="let v of vendors" [ngValue]="v.id">{{ v.name }}</option>
+    </select>
+  </div>
 </div>
 
 <button (click)="remove()" class="btn btn-danger" type="submit">Delete</button>
