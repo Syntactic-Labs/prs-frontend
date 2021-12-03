@@ -28,26 +28,26 @@ export class RequestService {
   delete(id: number): Observable<Request> {
     return this.httpsvc.delete(`${this.baseurl}/${id}`) as Observable<Request>;
   }
-  reviews(userId: number): Observable<Request> {
+  reviews(userId: number): Observable<Request[]> {
     return this.httpsvc.get(
       `${this.baseurl}/reviews/${userId}`
-    ) as Observable<Request>;
+    ) as Observable<Request[]>;
   }
   review(request: Request): Observable<Request> {
     return this.httpsvc.put(
-      `${this.baseurl}/review/${request.id}`,
+      `${this.baseurl}/review`,
       request
     ) as Observable<Request>;
   }
   approve(request: Request): Observable<Request> {
     return this.httpsvc.put(
-      `${this.baseurl}/approve/${request.id}`,
+      `${this.baseurl}/approve`,
       request
     ) as Observable<Request>;
   }
   reject(request: Request): Observable<Request> {
     return this.httpsvc.put(
-      `${this.baseurl}/reject/${request.id}`,
+      `${this.baseurl}/reject`,
       request
     ) as Observable<Request>;
   }

@@ -1,1 +1,31 @@
-<p>request-review-list works!</p>
+<app-menu></app-menu>
+<p>request review list</p>
+<table class="table table-sm table-striped table-hover">
+    <thead>
+
+        <tr>
+            <th>Id</th>
+            <th>Description</th>
+            <th>Justification</th>
+            <th>Delivery Mode</th>
+            <th>Status</th>
+            <th>Total</th>
+            <th>User</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let request of requests">
+            <td>{{request.id}}</td>
+            <td>{{request.description}}</td>
+            <td>{{request.justification}}</td>
+            <td>{{request.deliveryMode}}</td>
+            <td>{{request.status}}</td>
+            <td>{{request.total | currency}}</td>
+            <td>{{request.userName}}</td>
+            <td>
+               <a routerLink="/requests/review/{{request.id}}">Review</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
