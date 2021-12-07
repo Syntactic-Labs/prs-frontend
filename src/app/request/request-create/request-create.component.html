@@ -1,0 +1,62 @@
+<app-menu></app-menu>
+<p>request-create works!</p>
+<div>
+  <label>Id: </label>
+  <input placeholder="0" [(ngModel)]="request.id" type="text" disabled />
+</div>
+<div>
+  <label>Description: </label>
+  <input
+    placeholder="Description"
+    [(ngModel)]="request.description"
+    type="text"
+  />
+</div>
+<div>
+  <label>Justification: </label>
+  <input
+    placeholder="Justification"
+    [(ngModel)]="request.justification"
+    type="text"
+  />
+</div>
+<div>
+  <label>Rejection Reason: </label>
+  <input
+    placeholder="Rejection Reason"
+    [(ngModel)]="request.rejectionReason"
+    type="text"
+    disabled
+  />
+</div>
+<div>
+  <label>Mode of Delivery:</label>
+  <input
+    placeholder="Mode of Delivery"
+    [(ngModel)]="request.deliveryMode"
+    type="text"
+  />
+</div>
+<div>
+  <label>Status:</label>
+  <input
+    placeholder="Status"
+    [(ngModel)]="request.status"
+    type="text"
+    disabled
+  />
+</div>
+<div>
+  <label>Total:</label>
+  <input placeholder="0" [(ngModel)]="request.total" type="number" disabled />
+</div>
+<div>
+  <label>User:</label>
+  <input
+    placeholder="User Id"
+    [(ngModel)]="request.userName"
+    type="text"
+    disabled
+  />
+</div>
+<button (click)="save()" class="btn btn-success">Create</button>

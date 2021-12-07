@@ -1,1 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
+input {
+    border-radius: 5px;
+    
+}
+input:hover{
+    box-shadow: 5px 10px 10px #888888;
+}

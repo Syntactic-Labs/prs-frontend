@@ -1,0 +1,42 @@
+<app-menu></app-menu>
+<p>Vendor Edit</p>
+<div *ngIf="vendor">
+  <div>
+    <label>Id: </label>
+    <input [(ngModel)]="vendor.id" type="text" />
+  </div>
+  <div>
+    <label>Code: </label>
+    <input [(ngModel)]="vendor.code" type="text" />
+  </div>
+  <div>
+    <label>Name: </label>
+    <input [(ngModel)]="vendor.name" type="text" />
+  </div>
+  <div>
+    <label>Address: </label>
+    <input [(ngModel)]="vendor.address" type="text" />
+  </div>
+  <div>
+    <label>City: </label>
+    <input [(ngModel)]="vendor.city" type="text" />
+  </div>
+  <div>
+    <label>State: </label>
+    <input [(ngModel)]="vendor.state" type="text" />
+  </div>
+  <div>
+    <label>Zip: </label>
+    <input [(ngModel)]="vendor.zip" type="text" />
+  </div>
+  <div>
+    <label>Phone: </label>
+    <input [(ngModel)]="vendor.phone" type="text" />
+  </div>
+  <div>
+    <label>Email: </label>
+    <input [(ngModel)]="vendor.email" type="text" />
+  </div>
+</div>
+<button (click)="remove()" class="btn btn-danger" type="submit">Delete</button>
+<button (click)="save()" class="btn btn-success" type="submit">Update</button>

@@ -1,0 +1,42 @@
+<app-menu></app-menu>
+<div>
+  <label>Search: </label>
+  <input
+    [(ngModel)]="searchCrit"
+    placeholder="Enter Product Info"
+    type="text"
+  />
+</div>
+<table class="table table-sm table-striped table-hover">
+  <thead>
+    <tr>
+      <th colspan="7"><h4>Product List</h4></th>
+    </tr>
+    <tr>
+      <th>Id</th>
+      <th>PartNbr</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Unit</th>
+      <th>Vendor</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products | productSearch: searchCrit">
+      <td>{{ product.id }}</td>
+      <td>{{ product.partNbr }}</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.price | currency }}</td>
+      <td>{{ product.unit }}</td>
+      <td>{{ product.vendorName }}</td>
+      <td>
+        <a routerLink="/products/detail/{{ product.id }}">Detail</a> |
+        <a routerLink="/products/edit/{{ product.id }}">Edit</a>
+      </td>
+    </tr>
+  </tbody>
+  <tfoot>
+    <tr><td colspan="7"><h4><a routerLink="/products/create">Add Product</a></h4></td></tr>
+  </tfoot>
+</table>

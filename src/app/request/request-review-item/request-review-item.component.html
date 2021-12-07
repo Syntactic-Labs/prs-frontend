@@ -1,0 +1,53 @@
+<app-menu></app-menu>
+<p>request-review-item </p>
+<table class="table table-sm table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Description</th>
+            <th>Rejection Reason</th>
+            <th>Status</th>
+            <th>Total</th>
+            <th>User</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{request.id}}</td>
+            <td>{{request.description}}</td>
+            <td>{{request.rejectionReason}}</td>
+            <td>{{request.status}}</td>
+            <td>{{request.total | currency}}</td>
+            <td>{{request.userName}}</td>
+        </tr>
+    </tbody>
+</table>
+<p>Request lines</p>
+<table class="table table-sm table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Subtotal</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let rl of request.requestLines">
+            <td>{{rl.id}}</td>
+            <td>{{rl.product !== undefined ? rl.product.name : "missing"}}</td>
+            <td>{{rl.quantity}}</td>
+            <td>{{(rl.product !== undefined ? rl.product.price : -1) | currency}}</td>
+            <td>{{rl.quantity * (rl.product !== undefined ? rl.product.price : -1)}}</td>
+        </tr>
+    </tbody>
+</table>
+<button (click)="showRejectionReason()" class="btn btn-danger ">Reject</button>
+<span *ngIf="showRejection">
+    <span> | <input [(ngModel)]="request.rejectionReason"></span>
+    <span> | <button (click)="reject(request)" class="btn btn-danger">Verify Reject</button></span>
+</span>
+<div>
+    <button (click)="approve(request)" class="btn btn-success ">Approve</button>
+</div>

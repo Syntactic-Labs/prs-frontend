@@ -1,0 +1,40 @@
+<app-menu></app-menu>
+<h4>Vendor Info</h4>
+<div *ngIf="vendor">
+  <div>
+    <label>Id: </label>
+    <input value="{{ vendor.id }}" type="text" disabled />
+  </div>
+  <div>
+    <label>Code: </label>
+    <input value="{{ vendor.code }}" type="text" disabled />
+  </div>
+  <div>
+    <label>Name: </label>
+    <input value="{{ vendor.name }}" type="text" disabled />
+  </div>
+  <div>
+    <label>Address: </label>
+    <input value="{{ vendor.address }}" type="text" disabled />
+  </div>
+  <div>
+    <label>City: </label>
+    <input value="{{ vendor.city }}" type="text" disabled />
+  </div>
+  <div>
+    <label>State: </label>
+    <input value="{{ vendor.state }}" type="text" disabled />
+  </div>
+  <div>
+    <label>Zip: </label>
+    <input value="{{ vendor.zip }}" type="text" disabled />
+  </div>
+  <div>
+    <label>Phone: </label>
+    <input value="{{ vendor.phone }}" type="text" disabled />
+  </div>
+  <div>
+    <label>Email: </label>
+    <input value="{{ vendor.email }}" type="text" disabled />
+  </div>
+</div>

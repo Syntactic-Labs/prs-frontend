@@ -1,0 +1,28 @@
+<app-menu></app-menu>
+<p>Product Detail</p>
+<div *ngIf="product">
+  <div>
+    <label>Id: </label>
+    <input value="{{ product.id }}" type="text" disabled />
+  </div>
+  <div>
+    <label>PartNbr: </label>
+    <input value="{{ product.partNbr }}" type="text" disabled />
+  </div>
+  <div>
+    <label>Name: </label>
+    <input type="text" value="{{ product.name }}" disabled />
+  </div>
+  <div>
+    <label>Price: </label>
+    <input value="{{ product.price }}" type="text" disabled />
+  </div>
+  <div>
+    <label>Unit:</label>
+    <input value="{{ product.unit }}" type="text" disabled />
+  </div>
+  <div>
+    <label>Vendor:</label>
+    <input  value="{{vendor}}" type="text" disabled />
+  </div>
+</div>

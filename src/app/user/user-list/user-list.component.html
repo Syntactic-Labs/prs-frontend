@@ -1,0 +1,42 @@
+<app-menu></app-menu>
+
+<div>
+  <label>Search: </label>
+  <input [(ngModel)]="searchCrit" placeholder="Enter User Info" type="text" />
+</div>
+<table class="table table-sm table-striped table-hover">
+  <thead>
+    <tr>
+      <th colspan="8"><h4>User List</h4></th>
+    </tr>
+    <tr>
+      <th>Id</th>
+      <th>User Name</th>
+      <th>Name</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Admin</th>
+      <th>Reviewer</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users | userSearch: searchCrit">
+      <td>{{ user.id }}</td>
+      <td>{{ user.username }}</td>
+      <td>{{ user.firstname }} {{ user.lastname }}</td>
+      <td>{{ user.phone }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.isAdmin | yesNo }}</td>
+      <td>{{ user.isReviewer | yesNo }}</td>
+      <td>
+        <a routerLink="/users/detail/{{ user.id }}">Detail</a> |
+        <a routerLink="/users/edit/{{ user.id }}">Edit</a>
+      </td>
+    </tr>
+  </tbody>
+    <tfoot>
+      <tr><td colspan="8"><h4><a routerLink="/users/create">Add User</a></h4></td></tr>
+    </tfoot>
+</table>
+

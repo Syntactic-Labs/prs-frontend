@@ -1,0 +1,10 @@
+a {
+  color: silver;
+  text-decoration: none;
+  padding: 0px 20px;
+}
+a:hover {
+  color: white;
+  background-color: blue;
+  border-radius: 6px;
+}

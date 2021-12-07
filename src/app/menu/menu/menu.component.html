@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-md bg-dark navbar-dar">
+  <div class="container-fluid">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navmenu"
+    >
+      <span>Menu</span>
+    </button>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav">
+        <app-menuitem [menu]="m" *ngFor="let m of menus"></app-menuitem>
+      </ul>
+    </div>
+    <div id="currentUser">
+      <span>{{ name }}</span>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,30 @@
+<app-menu></app-menu>
+<p>product-create works!</p>
+<div>
+  <label>Id: </label>
+  <input placeholder="0" [(ngModel)]="product.id" type="text" disabled />
+</div>
+<div>
+  <label>PartNbr: </label>
+  <input placeholder="Part Number" [(ngModel)]="product.partNbr" type="text" />
+</div>
+<div>
+  <label>Name: </label>
+  <input placeholder="Name" [(ngModel)]="product.name" type="text" />
+</div>
+<div>
+  <label>Price: </label>
+  <input placeholder="Price" [(ngModel)]="product.price" type="text" />
+</div>
+<div>
+  <label>Unit:</label>
+  <input placeholder="Unit" [(ngModel)]="product.unit" type="text">
+</div>
+<div>
+  <label>Vendor:</label>
+  <select [(ngModel)]="product.vendorId">
+    <option *ngFor="let v of vendors" [ngValue]="v.id">{{ v.name }}</option>
+  </select>
+</div>
+<button class="btn btn-warning">Clear</button>
+<button (click)="save()" class="btn btn-success">Create</button>

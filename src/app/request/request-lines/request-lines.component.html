@@ -1,0 +1,77 @@
+<app-menu></app-menu>
+<div>
+  <table name="req" class="table table-sm table-striped table-hover">
+    <thead>
+      <tr>
+        <th colspan="7"><h4>Request</h4></th>
+      </tr>
+      <tr>
+        <th>Id</th>
+        <th>Description</th>
+        <th>Rejection Reason</th>
+        <th>Status</th>
+        <th>Total</th>
+        <th>User</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ request.id }}</td>
+        <td>{{ request.description }}</td>
+        <td>{{ request.rejectionReason }}</td>
+        <td>{{ request.status }}</td>
+        <td>{{ request.total | currency }}</td>
+        <td>{{ request.userName }}</td>
+        <td>
+          <button (click)="review(request)" class="btn btn-success">
+            Review
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-sm table-striped table-hover">
+    <thead>
+      <tr>
+        <th colspan="6">
+          <h4>
+            Request Lines ------------
+            <a routerLink="/requestlines/create/{{ request.id }}">Create</a>
+          </h4>
+        </th>
+      </tr>
+      <tr>
+        <th>Id</th>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Subtotal</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let rl of request.requestLines">
+        <td>{{ rl.id }}</td>
+        <td>{{ rl.product !== undefined ? rl.product.name : "not found" }}</td>
+        <td>{{ rl.quantity }}</td>
+        <td>
+          {{ (rl.product !== undefined ? rl.product.price : -1) | currency }}
+        </td>
+        <td>
+          {{
+            rl.quantity * (rl.product !== undefined ? rl.product.price : -1)
+              | currency
+          }}
+        </td>
+        <td>
+          <button (click)="deleteLine(rl.id)" class="btn btn-danger">
+            Delete
+          </button>
+          |
+          <button (click)="editLine(rl.id)" class="btn btn-link">Edit</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,41 @@
+<app-menu></app-menu>
+<h4>Add NEW User</h4>
+<div>
+  <label>Id: </label>
+  <input placeholder="Id" [(ngModel)]="user.id" type="text" disabled />
+</div>
+<div>
+  <label>Username: </label>
+  <input placeholder="Username" [(ngModel)]="user.username"  type="text" required />
+</div>
+<div>
+  <label>Password: </label>
+  <input placeholder="Password" [(ngModel)]="user.password" type="text" />
+  <input placeholder="Password" [(ngModel)]="passwordchk" (blur)="passwordCheck()" type="text" />
+</div>
+<div>
+  <label>First Name: </label>
+  <input placeholder="First Name" [(ngModel)]="user.firstname" type="text" />
+</div>
+<div>
+  <label>Last Name:</label>
+  <input placeholder="Last Name" [(ngModel)]="user.lastname" type="text" />
+</div>
+<div>
+  <label>Phone: </label>
+  <input placeholder="Phone Number" [(ngModel)]="user.phone" type="text" />
+</div>
+<div>
+  <label>Email: </label>
+  <input placeholder="Email" [(ngModel)]="user.email" type="text" />
+</div>
+<div>
+  <label>Admin: </label>
+  <input type="checkbox" [(ngModel)]="user.isAdmin" />
+</div>
+<div>
+  <label>Reviewer: </label>
+  <input type="checkbox" [(ngModel)]="user.isReviewer" />
+</div>
+<button class="btn btn-warning">Clear</button>
+<button (click)="save()" class="btn btn-success">Create</button>

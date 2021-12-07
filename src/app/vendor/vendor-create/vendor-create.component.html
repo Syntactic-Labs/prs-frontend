@@ -1,0 +1,40 @@
+<app-menu></app-menu>
+<h4>Add NEW Vendor</h4>
+<div>
+  <label>Id: </label>
+  <input placeholder="0" [(ngModel)]="vendor.id" type="text" disabled />
+</div>
+<div>
+  <label>Code: </label>
+  <input placeholder="Code" [(ngModel)]="vendor.code" type="text" />
+</div>
+<div>
+  <label>Name: </label>
+  <input placeholder="Name" [(ngModel)]="vendor.name" type="text" />
+</div>
+<div>
+  <label>Address: </label>
+  <input placeholder="Address" [(ngModel)]="vendor.address" type="text" />
+</div>
+<div>
+  <label>City: </label>
+  <input placeholder="City" [(ngModel)]="vendor.city" type="text" />
+</div>
+<div>
+  <label>State: </label>
+  <input placeholder="State" [(ngModel)]="vendor.state" type="text" />
+</div>
+<div>
+  <label>Zip: </label>
+  <input placeholder="Zip" [(ngModel)]="vendor.zip" type="text" />
+</div>
+<div>
+  <label>Phone: </label>
+  <input placeholder="Phone" [(ngModel)]="vendor.phone" type="text" />
+</div>
+<div>
+  <label>Email: </label>
+  <input placeholder="Email" [(ngModel)]="vendor.email" type="text" />
+</div>
+<button class="btn btn-warning">Clear</button>
+<button (click)="save()" class="btn btn-success">Create</button>
