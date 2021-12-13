@@ -11,3 +11,6 @@ table {
     border: 1px solid black;
     text-align: center;
   }
+  .container{
+    align-items: center;
+  }
