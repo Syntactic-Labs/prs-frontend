@@ -1,7 +1,9 @@
 <app-menu></app-menu>
-<p>request-review-item </p>
 <table class="table table-sm table-striped table-hover">
     <thead>
+        <tr>
+            <th colspan="6"><h4>Request</h4></th>
+          </tr>
         <tr>
             <th>Id</th>
             <th>Description</th>
@@ -22,9 +24,11 @@
         </tr>
     </tbody>
 </table>
-<p>Request lines</p>
 <table class="table table-sm table-striped table-hover">
     <thead>
+        <tr>
+            <th colspan="5"><h4>Request Lines</h4></th>
+          </tr>
         <tr>
             <th>Id</th>
             <th>Product</th>
@@ -43,11 +47,13 @@
         </tr>
     </tbody>
 </table>
-<button (click)="showRejectionReason()" class="btn btn-danger ">Reject</button>
-<span *ngIf="showRejection">
-    <span> | <input [(ngModel)]="request.rejectionReason"></span>
-    <span> | <button (click)="reject(request)" class="btn btn-danger">Verify Reject</button></span>
-</span>
-<div>
-    <button (click)="approve(request)" class="btn btn-success ">Approve</button>
+<div class="container">
+    <button (click)="showRejectionReason()" class="btn btn-danger ">Reject</button>
+    <span *ngIf="showRejection">
+        <span> | <input [(ngModel)]="request.rejectionReason"></span>
+        <span> | <button (click)="reject(request)" class="btn btn-danger">Verify Reject</button></span>
+    </span>
+    <div>
+        <button (click)="approve(request)" class="btn btn-success ">Approve</button>
+    </div>
 </div>

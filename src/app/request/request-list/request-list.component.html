@@ -1,12 +1,13 @@
 <app-menu></app-menu>
-<span>Request List</span> |
-<a routerLink="/requests/create">Create</a>
 <div>
   <label>Search:</label>
-  <input [(ngModel)]="searchCrit" placeholder="Enter Product Info" type="text" />
+  <input [(ngModel)]="searchCrit" placeholder="Enter Request Info" type="text" />
 </div>
 <table class="table table-sm table-striped table-hover">
   <thead>
+    <tr>
+      <th colspan="9"><h4>Request List</h4></th>
+    </tr>
     <tr>
       <th>Id</th>
       <th>Description</th>
@@ -36,4 +37,7 @@
       </td>
     </tr>
   </tbody>
+  <tfoot>
+    <tr><td colspan="9"><h4><a routerLink="/requests/create">Add Request</a></h4></td></tr>
+  </tfoot>
 </table>
