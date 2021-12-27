@@ -22,7 +22,7 @@ export class RequestListComponent implements OnInit {
       next: res => {
         console.debug(res);
         this.requests = res as Request[];
-        this.requests.forEach(r => r.userName = r.user !== undefined ? r.user.username : "not found");
+        this.requests.forEach(r => r.username = r.user !== undefined ? r.user.username : "not found");
       },
       error: err => {
         console.error(err);

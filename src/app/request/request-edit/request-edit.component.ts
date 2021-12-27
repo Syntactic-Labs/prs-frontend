@@ -43,7 +43,7 @@ export class RequestEditComponent implements OnInit {
       next: (res) => {
         console.debug(res);
         this.request = res as Request;
-        this.request.userName =
+        this.request.username =
           this.request.user !== undefined
             ? this.request.user.username
             : 'No User';

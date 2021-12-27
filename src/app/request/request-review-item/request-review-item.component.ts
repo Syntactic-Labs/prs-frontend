@@ -49,7 +49,7 @@ export class RequestReviewItemComponent implements OnInit {
       next: res => {
         console.debug("Request:", res as Request);
         this.request = res as Request;
-        this.request.userName = this.request.user !== undefined ? this.request.user.username : "missing";
+        this.request.username = this.request.user !== undefined ? this.request.user.username : "missing";
       },
       error: err => {
         console.error("Trap error:", err);

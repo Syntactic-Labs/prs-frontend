@@ -35,7 +35,7 @@ export class RequestLinesComponent implements OnInit {
       next: (res) => {
         console.debug(res as Request);
         this.request = res as Request;
-        this.request.userName =
+        this.request.username =
           this.request.user !== undefined
             ? this.request.user.username
             : 'not found';

@@ -12,7 +12,7 @@ export class Request {
   
   userId: number = 0;
   user?: User;
-  userName: string="";
+  username: string="";
 
   requestLines!: RequestLine[];
 

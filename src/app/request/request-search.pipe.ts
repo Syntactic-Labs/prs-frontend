@@ -19,7 +19,7 @@ export class RequestSearchPipe implements PipeTransform {
         r.deliveryMode.toString().toLowerCase().includes(search) ||
         r.status.toString().toLowerCase().includes(search) ||
         r.total.toString().toLowerCase().includes(search) ||
-        r.userName.toString().toLowerCase().includes(search)
+        r.username.toString().toLowerCase().includes(search)
       ) {
         searchRequest.push(r);
       }
